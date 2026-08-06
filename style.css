@@ -1,0 +1,294 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+:root{
+--accent:#0d8ba1;
+--text-dark:#222;
+--glass-white:white;
+}
+.navbar{
+background-color:transparent;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:5px 10px;
+}
+.logo span{
+    color:rosybrown;
+}
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:28px;
+font-weight:bold;
+color:rgb(255, 255, 255);
+}
+.logo img{
+width:50px;
+height:50px;
+object-fit:cover;
+}
+.menu{
+list-style:none;
+display:flex;
+gap:25px;
+}
+.menu li{
+    background: transparent;
+}
+.menu li a{
+background: transparent;
+transition:0.3s;
+font-size: 25px;
+text-decoration: none;
+color: rgb(219, 233, 19);
+padding: 0px 0px;
+border-radius: 8px;
+display: inline-block;
+}
+.menu li a:hover{
+color:rgb(27, 29, 189);
+}
+.login-btn{
+color:black;
+}
+.content{
+position:relative;
+}
+.content img{
+width:100%;
+height:100vh;
+object-fit:cover;
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+.text{
+position:absolute;
+top:25%;
+left:10%;
+color:rgb(179, 177, 177);
+font-size:50px;
+}
+.login-section,
+.form-section{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+z-index:1000;
+}
+.login-form input,
+.register-form input{
+display:block;
+width:250px;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+.login-form button,
+.register-form button{
+width:100%;
+padding:10px;
+background-color:#007BFF;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.form-message{
+margin-bottom:10px;
+padding:10px;
+border-radius:5px;
+font-size:14px;
+background:#f1f1f1;
+color:#333;
+}
+
+.form-message.success{
+background:#eaf7ea;
+color:#2e7d32;
+}
+
+.form-message.error{
+background:#fdecea;
+color:#c62828;
+}
+.login-form button:hover,
+.register-form button:hover{
+background-color:#0056b3;
+}
+.about-page{
+background:url(2.jpg) no-repeat center center/cover;
+background-attachment:fixed;
+}
+.about-hero{
+text-align:center;
+padding:100px 20px 60px;
+color:#0056b3;
+}
+.about-hero h1{
+font-size:4rem;
+font-weight:800;
+letter-spacing:-1px;
+max-width:950px;
+margin:auto;
+}
+.about-container{
+margin:0 auto 100px;
+background:var(--glass-white);
+color:var(--text-dark);
+padding:70px;
+border-radius:40px;
+box-shadow:0 40px 100px rgba(0,0,0,0.2);
+position:relative;
+max-width:1000px;
+}
+.about-container::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:8px;
+background:var(--accent);
+border-radius:40px 40px 0 0;
+}
+h2{
+color:var(--accent);
+font-size:2.2rem;
+margin-bottom:25px;
+}
+h3{
+margin-top:45px;
+margin-bottom:20px;
+font-size:1.5rem;
+color:#111;
+}
+p{
+font-size:1.1rem;
+margin-bottom:25px;
+color:#4a4a4a;
+}
+ul{
+list-style:none;
+display:grid;
+gap:15px;
+}
+li{
+padding:20px;
+background:#f9f9f9;
+border-radius:15px;
+border-left:5px solid var(--accent);
+transition:0.3s;
+}
+li:hover{
+background:#f0fff4;
+transform:translateX(10px);
+}
+.contact-section{
+width:100%;
+min-height:100vh;
+background:url(1.jpg) no-repeat center/cover;
+padding:40px;
+text-align:center;
+}
+.contact-section h1{
+color:#0d8ba1;
+margin-bottom:10px;
+font-size:36px;
+}
+.contact-container{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+.contact-card{
+background:#f7f7f7;
+width:250px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 12px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+.contact-card:hover{
+transform:translateY(-8px);
+}
+.contact-card h3{
+color:#0d8ba1;
+margin-bottom:10px;
+}
+.feedback-box{
+max-width:500px;
+margin:auto;
+}
+.feedback-form input,
+.feedback-form textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+.feedback-form button{
+width:100%;
+padding:12px;
+background:#0d8ba1;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+.feedback-form button:hover{
+background:#086a78;
+}
+.blog-header{
+text-align:center;
+background: #0056b3;
+}
+.blog-grid{
+display:flex;
+gap:30px;
+padding:50px;
+flex-wrap:wrap;
+justify-content:center;
+}
+.blog-card{
+width:300px;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+.blog-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+h1{
+color:#0d8ba1;
+text-align:center;
+}
+.blog-card p{
+    text-align: center;
+}
+header p{
+    text-align: center;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Growers | Urban Farming Hub</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img.jpg" alt="Logo"> <span>City <br> Growers</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="web.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" class="login-btn" onclick="openlogin()">Log In</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Urban Farming Blog</h1>
+        <p>Expert advice for growing your own food in the heart of the city.</p>
+    </header>
+
+    <div class="blog-grid">
+        <div class="blog-card">
+            <div class="card-img-wrapper"><img src="3.jpg" alt="Balcony"></div>
+            <div class="card-content">
+                <span class="tag">SMALL SPACE</span>
+                <h2>Balcony Gardening</h2>
+                <p>Learn how to turn even the smallest balcony into a flourishing vegetable patch.</p>
+                <a href="#" class="read-btn">Read More →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=600" alt="Hydroponics"></div>
+            <div class="card-content">
+                <span class="tag">SMART TECH</span>
+                <h2>Indoor Hydroponics</h2>
+                <p>Discover the science of growing plants in water without messy soil.</p>
+                <a href="#" class="read-btn">Read More →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600" alt="Rooftop"></div>
+            <div class="card-content">
+                <span class="tag">EXPANSION</span>
+                <h2>Rooftop Farming</h2>
+                <p>Take your farming to new heights with structural weight and wind tips.</p>
+                <a href="#" class="read-btn">Read More →</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="login-section" id="loginBox">
+        <form class="login-form">
+            <h2>Login</h2>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p class="register-link">Don't have an account? <a href="#" onclick="openregister()">Register</a></p>
+            <p style="text-align: center; cursor:pointer; color:red; margin-top:10px;" onclick="this.parentElement.parentElement.style.display='none'">Close</p>
+        </form>
+    </section>
+
+    <section class="form-section" id="registerBox">
+        <form class="register-form">
+            <h2>Register</h2>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Create Account</button>
+            <p class="switch-link">Already have an account? <a href="#" onclick="openlogin()">Login</a></p>
+            <p style="text-align: center; cursor:pointer; color:red; margin-top:10px;" onclick="this.parentElement.parentElement.style.display='none'">Close</p>
+        </form>
+    </section>
+
+    <script>
+        function openlogin(){
+            document.getElementById("loginBox").style.display="block";
+            document.getElementById("registerBox").style.display="none";
+        }
+
+        function openregister(){
+            document.getElementById("registerBox").style.display="block";
+            document.getElementById("loginBox").style.display="none";
+        }
+    </script>
+</body>
+</html>
