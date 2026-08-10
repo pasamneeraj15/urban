@@ -3,96 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Growers | Urban Farming Hub</title>
+    <title>City Growers | Urban Farming Blog</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
-<body>
+<body class="blog-page">
 
     <nav class="navbar">
         <div class="logo">
-            <img src="img.jpg" alt="Logo"> <span>City <br> Growers</span>
+            <img src="img.jpg" alt="Logo">
+            <span>City <br> Growers</span>
         </div>
 
         <ul class="menu">
-            <li><a href="web.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="#" class="login-btn" onclick="openlogin()">Log In</a></li>
+            <li><a href="login.html" class="login-btn">Log In</a></li>
         </ul>
     </nav>
 
-    <header>
-        <h1>Urban Farming Blog</h1>
-        <p>Expert advice for growing your own food in the heart of the city.</p>
+    <header class="blog-hero">
+        <div class="blog-hero-content">
+            <p class="eyebrow">INSIGHTS & TIPS</p>
+            <h1>Urban Farming Blog</h1>
+            <p>Practical advice, innovative techniques, and expert guidance for growing fresh food in modern city spaces.</p>
+        </div>
     </header>
 
-    <div class="blog-grid">
-        <div class="blog-card">
-            <div class="card-img-wrapper"><img src="3.jpg" alt="Balcony"></div>
-            <div class="card-content">
-                <span class="tag">SMALL SPACE</span>
-                <h2>Balcony Gardening</h2>
-                <p>Learn how to turn even the smallest balcony into a flourishing vegetable patch.</p>
-                <a href="#" class="read-btn">Read More →</a>
+    <main class="blog-container">
+        <section class="blog-intro">
+            <h2>Fresh ideas for city growers</h2>
+            <p>Whether you’re working with a balcony, rooftop, or indoor setup, our articles help you build productive and sustainable growing systems.</p>
+        </section>
+
+        <section class="blog-highlights">
+            <div class="featured-post">
+                <span class="tag">Featured Story</span>
+                <h3>Turn a compact patio into a thriving edible garden</h3>
+                <p>From vertical planters to sun-tracking containers, discover practical upgrades that help you harvest more from less space.</p>
+                <div class="post-meta">
+                    <span>By Maya Chen</span>
+                    <span>6 min read</span>
+                </div>
+                <a href="#" class="read-btn primary">Explore the guide</a>
             </div>
-        </div>
 
-        <div class="blog-card">
-            <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=600" alt="Hydroponics"></div>
-            <div class="card-content">
-                <span class="tag">SMART TECH</span>
-                <h2>Indoor Hydroponics</h2>
-                <p>Discover the science of growing plants in water without messy soil.</p>
-                <a href="#" class="read-btn">Read More →</a>
+            <div class="blog-sidebar">
+                <div class="sidebar-card">
+                    <h4>Popular topics</h4>
+                    <div class="topic-list">
+                        <span>Container Gardening</span>
+                        <span>Water Saving</span>
+                        <span>Seasonal Planting</span>
+                        <span>Composting</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>Stay inspired</h4>
+                    <p>Get weekly tips, new plant picks, and seasonal updates in your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit">Join now</button>
+                    </form>
+                </div>
             </div>
+        </section>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="img3.jpg" alt="Balcony gardening setup">
+                <div class="card-content">
+                    <span class="tag">Small Space</span>
+                    <h3>Balcony Gardening</h3>
+                    <p>Learn how to design compact growing systems that thrive in limited urban spaces without sacrificing yield.</p>
+                    <div class="card-meta">
+                        <span>By Lena Ortiz</span>
+                        <span>5 min read</span>
+                    </div>
+                    <a href="#" class="read-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=600" alt="Hydroponics setup">
+                <div class="card-content">
+                    <span class="tag">Smart Tech</span>
+                    <h3>Indoor Hydroponics</h3>
+                    <p>Discover efficient hydroponic methods that reduce water usage while accelerating plant growth indoors.</p>
+                    <div class="card-meta">
+                        <span>By Sam Rivera</span>
+                        <span>7 min read</span>
+                    </div>
+                    <a href="#" class="read-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600" alt="Rooftop farming">
+                <div class="card-content">
+                    <span class="tag">Expansion</span>
+                    <h3>Rooftop Farming</h3>
+                    <p>Explore the structural, environmental, and operational considerations behind successful rooftop cultivation.</p>
+                    <div class="card-meta">
+                        <span>By Noor Patel</span>
+                        <span>8 min read</span>
+                    </div>
+                    <a href="#" class="read-btn">Read More</a>
+                </div>
+            </article>
         </div>
-
-        <div class="blog-card">
-            <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600" alt="Rooftop"></div>
-            <div class="card-content">
-                <span class="tag">EXPANSION</span>
-                <h2>Rooftop Farming</h2>
-                <p>Take your farming to new heights with structural weight and wind tips.</p>
-                <a href="#" class="read-btn">Read More →</a>
-            </div>
-        </div>
-    </div>
-
-    <section class="login-section" id="loginBox">
-        <form class="login-form">
-            <h2>Login</h2>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-            <p class="register-link">Don't have an account? <a href="#" onclick="openregister()">Register</a></p>
-            <p style="text-align: center; cursor:pointer; color:red; margin-top:10px;" onclick="this.parentElement.parentElement.style.display='none'">Close</p>
-        </form>
-    </section>
-
-    <section class="form-section" id="registerBox">
-        <form class="register-form">
-            <h2>Register</h2>
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Create Account</button>
-            <p class="switch-link">Already have an account? <a href="#" onclick="openlogin()">Login</a></p>
-            <p style="text-align: center; cursor:pointer; color:red; margin-top:10px;" onclick="this.parentElement.parentElement.style.display='none'">Close</p>
-        </form>
-    </section>
-
-    <script>
-        function openlogin(){
-            document.getElementById("loginBox").style.display="block";
-            document.getElementById("registerBox").style.display="none";
-        }
-
-        function openregister(){
-            document.getElementById("registerBox").style.display="block";
-            document.getElementById("loginBox").style.display="none";
-        }
-    </script>
+    </main>
 </body>
 </html>

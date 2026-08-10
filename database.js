@@ -26,9 +26,22 @@ async function initializeDatabase() {
         fullName VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL UNIQUE,
         password VARCHAR(255) NOT NULL,
+        provider VARCHAR(50),
+        googleId VARCHAR(255),
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `);
+
+    const [providerColumns] = await connection.query("SHOW COLUMNS FROM login LIKE 'provider'");
+    if (providerColumns.length === 0) {
+      await connection.query('ALTER TABLE login ADD COLUMN provider VARCHAR(50)');
+    }
+
+    const [googleIdColumns] = await connection.query("SHOW COLUMNS FROM login LIKE 'googleId'");
+    if (googleIdColumns.length === 0) {
+      await connection.query('ALTER TABLE login ADD COLUMN googleId VARCHAR(255)');
+    }
+
     console.log(`Database '${database}' is ready on ${host}`);
   } finally {
     connection.release();

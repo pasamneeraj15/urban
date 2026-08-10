@@ -71,13 +71,14 @@ async function findUser(email, password) {
 }
 
 async function saveUser(newUser) {
+  const { fullName, email, password = '', provider = null, googleId = null } = newUser;
+
   if (dbReady) {
     try {
-      await db.execute('INSERT INTO login (fullName, email, password) VALUES (?, ?, ?)', [
-        newUser.fullName,
-        normalizeEmail(newUser.email),
-        newUser.password,
-      ]);
+      await db.execute(
+        'INSERT INTO login (fullName, email, password, provider, googleId) VALUES (?, ?, ?, ?, ?)',
+        [fullName, normalizeEmail(email), password, provider, googleId]
+      );
       return true;
     } catch (error) {
       console.warn('Database insert failed, saving locally instead:', error.message);
@@ -86,11 +87,56 @@ async function saveUser(newUser) {
 
   const users = readUsers();
   users.push({
-    ...newUser,
-    email: normalizeEmail(newUser.email),
+    fullName,
+    email: normalizeEmail(email),
+    password,
+    provider,
+    googleId,
+    createdAt: new Date().toISOString(),
   });
   writeUsers(users);
   return false;
+}
+
+function escapeHtml(text) {
+  return String(text || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+async function findOrCreateGoogleUser(profile) {
+  const email = normalizeEmail(profile.emails?.[0]?.value);
+  const fullName = profile.displayName || `${profile.name?.givenName || ''} ${profile.name?.familyName || ''}`.trim() || email;
+
+  if (!email) {
+    throw new Error('Google account email is required.');
+  }
+
+  if (dbReady) {
+    try {
+      const [rows] = await db.execute('SELECT * FROM login WHERE email = ? OR googleId = ?', [email, profile.id]);
+      if (rows.length > 0) {
+        return rows[0];
+      }
+    } catch (error) {
+      console.warn('DB lookup failed for Google user:', error.message);
+    }
+  }
+
+  const newUser = {
+    fullName,
+    email,
+    password: '',
+    provider: 'google',
+    googleId: profile.id,
+    createdAt: new Date().toISOString(),
+  };
+
+  await saveUser(newUser);
+  return newUser;
 }
 
 async function initializeDatabase() {
@@ -108,11 +154,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(root, 'web.html'));
+  res.sendFile(path.join(root, 'index.html'));
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(root, 'login.html'));
 });
 
 app.get('/register', (req, res) => {
-  res.send('Use the registration form to create an account.');
+  res.sendFile(path.join(root, 'register.html'));
 });
 
 app.post('/login', async (req, res) => {
