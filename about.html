@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | City Growers</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body class="about-page">
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img.jpg" alt="Logo">
+            <span>City <br> Growers</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="web.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" class="login-btn" onclick="openlogin()">Log In</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-hero">
+        <h1>Our Green Mission</h1>
+    </div>
+
+    <section class="about-container">
+        <h2>What is Urban Farming?</h2>
+        <p>Urban farming is the pulse of a modern city. It’s the practice of cultivating and distributing food within heavily populated areas. By utilizing rooftops, balconies, and vertical spaces, we bring nature back to the concrete jungle.</p>
+
+        <h3>1. Key Methods of Urban Farming</h3>
+        <ul>
+            <li><strong>Vertical Farming</strong> Maximizing high-density areas with stacked layers and LED lighting.</li>
+            <li><strong>Hydroponics</strong> A soil-less method that uses 90% less water than traditional farming.</li>
+            <li><strong>Aquaponics</strong> A clever ecosystem where fish and plants grow together in harmony.</li>
+            <li><strong>Rooftop Farming</strong> Turning unused roof space into natural insulation for buildings.</li>
+        </ul>
+
+        <h3>2. Benefits of Urban Farming</h3>
+        <ul>
+            <li><strong>Food Security</strong> Direct access to healthy, pesticide-free produce for everyone.</li>
+            <li><strong>Environmental Impact</strong> Massively reducing the carbon footprint of food transport.</li>
+            <li><strong>Sustainability</strong> Promoting composting and reducing the urban heat island effect.</li>
+        </ul>
+
+        <h3>3. Challenges We Tackle</h3>
+        <ul>
+            <li><strong>Space Constraints</strong> Engineering new ways to grow in small footprints.</li>
+            <li><strong>Initial Setup</strong> Navigating the costs of advanced vertical systems.</li>
+            <li><strong>Regulatory Hurdles</strong> Working with local governments to update zoning laws.</li>
+        </ul>
+    </section>
+
+    <section class="login-section" id="loginBox">
+        <form class="login-form">
+            <h2>Login</h2>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p class="register-link">Don't have an account? <a href="#" onclick="openregister()">Register</a></p>
+        </form>
+    </section>
+
+    <section class="form-section" id="registerBox">
+        <form class="register-form">
+            <h2>Register</h2>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+            <p class="switch-link">Already have an account? <a href="#" onclick="openlogin()">Login</a></p>
+        </form>
+    </section>
+
+    <script>
+        function openlogin(){
+            document.getElementById("loginBox").style.display="block";
+            document.getElementById("registerBox").style.display="none";
+        }
+
+        function openregister(){
+            document.getElementById("registerBox").style.display="block";
+            document.getElementById("loginBox").style.display="none";
+        }
+    </script>
+
+</body>
+</html>

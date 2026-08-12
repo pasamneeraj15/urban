@@ -1,0 +1,56 @@
+[
+  {
+    "fullName": "Test",
+    "email": "test@example.com",
+    "password": "1234",
+    "createdAt": "2026-08-04T13:26:52.414Z"
+  },
+  {
+    "fullName": "shanu",
+    "email": "shanu@gmail.com",
+    "password": "s1234",
+    "createdAt": "2026-08-04T13:30:56.421Z"
+  },
+  {
+    "fullName": "Test",
+    "email": "test3@example.com",
+    "password": "1234",
+    "createdAt": "2026-08-04T13:34:11.863Z"
+  },
+  {
+    "fullName": "Test",
+    "email": "test4@example.com",
+    "password": "1234",
+    "createdAt": "2026-08-04T13:38:43.135Z"
+  },
+  {
+    "fullName": "Live Check",
+    "email": "livecheck@example.com",
+    "password": "1234",
+    "createdAt": "2026-08-04T13:41:20.814Z"
+  },
+  {
+    "fullName": "Test",
+    "email": "newuser@example.com",
+    "password": "1234",
+    "createdAt": "2026-08-04T13:49:29.420Z"
+  },
+  {
+    "fullName": "shan",
+    "email": "shan@gmail.com",
+    "password": "s123",
+    "createdAt": "2026-08-04T13:51:05.074Z"
+  },
+  {
+    "fullName": "neeraj",
+    "email": "neeraj@gmail.com",
+    "password": "nee12",
+    "createdAt": "2026-08-04T13:55:15.991Z"
+  },
+  {
+    "fullName": "shanu",
+    "email": "shanuk@gmail.com",
+    "password": "s111",
+    "createdAt": "2026-08-04T14:07:29.899Z"
+  }
+]
